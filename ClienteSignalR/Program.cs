@@ -23,7 +23,3 @@ while (true)
     break;
 }
 
-public class Notification
-{
-    public string Message { get; set; }
-}
