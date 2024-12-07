@@ -1,4 +1,9 @@
 # signalR - Basico
+
+**Documentación**
+* [.NET Core with SignalR and Angular – Real-Time Charts](https://code-maze.com/netcore-signalr-angular-realtime-charts/)
+* [How to Send Client-Specific Messages Using SignalR](https://code-maze.com/how-to-send-client-specific-messages-using-signalr/)
+  
 ## API 
 Contiene un endpoint para enviar mensajes
 
