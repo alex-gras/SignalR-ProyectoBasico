@@ -1,0 +1,13 @@
+
+<div>
+  <h1>Chat en tiempo real</h1>
+  <input [(ngModel)]="user" placeholder="Tu nombre" />
+  <input [(ngModel)]="message" placeholder="Escribe un mensaje" />
+  <button (click)="sendMessage()">Enviar</button>
+</div>
+
+<ul>
+  <li *ngFor="let msg of signalRService.messages">
+    <strong>{{ msg.user }}</strong>: {{ msg.message }}
+  </li>
+</ul>
