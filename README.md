@@ -1,4 +1,4 @@
-# signalR - Bàsico + Angular
+# signalR - Basico + Angular
 ## API 
 Contiene un endpoint para enviar mensajes
 
