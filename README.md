@@ -1,5 +1,5 @@
-## signalR - Bàsico
-### API 
+# signalR - Bàsico
+## API 
 Contiene un endpoint para enviar mensajes
 
 **Controller**
@@ -43,7 +43,7 @@ app.MapHub<ChatHub>("/messages"
 
 
 
-### Aplicación de consola
+## Aplicación de consola
 Recibe los mensajes de la API y permite enviar mensajes
 ````c#
 using Microsoft.AspNetCore.SignalR;
@@ -73,4 +73,4 @@ while (true)
 ````
 
 
- }
+ 
