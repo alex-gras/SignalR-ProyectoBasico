@@ -18,7 +18,6 @@ while (true)
 {
     Console.Write("Exit: pulsa una tecla");
     var message = Console.ReadLine();
-    //NO FUNCIONA EL ENVÍO
     await connection.InvokeAsync("SendMessage", "CONSOLA", message);
     
 }
