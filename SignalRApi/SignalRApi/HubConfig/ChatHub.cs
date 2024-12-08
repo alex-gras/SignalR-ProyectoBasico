@@ -4,9 +4,10 @@ namespace SignalRApi.HubConfig
 {
     public class ChatHub : Hub
     {
-        public async Task EnviaDatosDemo(List<string> data) =>
-               await Clients.All.SendAsync("enviardatosdemo", data);
+        public async Task BroadcastToConnection(List<string> data, string connectionId) =>
+               await Clients.Client(connectionId).SendAsync("broadcasttoclient", data);
 
+        public string GetConnectionId() => Context.ConnectionId;
     }
 
 }

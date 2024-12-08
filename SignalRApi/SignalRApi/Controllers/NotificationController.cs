@@ -32,7 +32,7 @@ namespace SignalRApi.Controllers
         [HttpPost("sendNotification")]
         public async Task<IActionResult> SendNotification([FromBody] Notification notification)
         {
-            await _hubContext.Clients.All.SendAsync("UpdateAllAsync1", notification.User, notification.Message);
+            await _hubContext.Clients.All.SendAsync("UpdateAllAsync", notification.User, notification.Message);
             return Ok(new { Message = "Notification sent successfully" });
         }
     }

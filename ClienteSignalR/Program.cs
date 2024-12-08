@@ -7,18 +7,22 @@ var connection = new HubConnectionBuilder()
     .WithAutomaticReconnect()
     .Build();
 
-connection.On<string, string>("UpdateAllAsync1",
+connection.Reconnecting += Reconnecting;
+connection.Reconnected += Reconnected;
+
+connection.On<string, string>("UpdateAllAsync",
     (user,message) => {
         Console.WriteLine($"Message SERVER: {user} - {message}");
     });
 
-connection.On<List<string>>("enviardatosdemo",
+connection.On<List<string>>("broadcasttoclient",
     (message) => {
         Console.WriteLine($"Message CLIENTS: {string.Join("-", message)}");
     });
 
 
 await connection.StartAsync();
+
 Console.WriteLine("Connection started.");
 
 while (true)
@@ -28,7 +32,18 @@ while (true)
     List<string> datosEnviar = new();
     datosEnviar.Add("CONSOLA");
     datosEnviar.Add(message);
-    await connection.InvokeAsync("EnviaDatosDemo", datosEnviar);
+    await connection.InvokeAsync("BroadcastToConnection", datosEnviar, connection.ConnectionId);
    
 }
 
+Task Reconnecting(Exception arg)
+{
+   Console.WriteLine("Attempting to reconnect...");
+   return Task.CompletedTask;
+}
+
+Task Reconnected(string arg)
+{
+    Console.WriteLine("Connection restored.");
+    return Task.CompletedTask;
+}
