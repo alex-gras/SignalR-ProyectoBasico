@@ -1,4 +1,9 @@
 # signalR - Basico + Angular
+**Documentación**
+* [.NET Core with SignalR and Angular – Real-Time Charts](https://code-maze.com/netcore-signalr-angular-realtime-charts/)
+* [How to Send Client-Specific Messages Using SignalR](https://code-maze.com/how-to-send-client-specific-messages-using-signalr/)
+* [Introducción a ASP.NET Core SignalR](https://learn.microsoft.com/es-es/aspnet/core/signalr/introduction?view=aspnetcore-9.0)
+
 ## API 
 Contiene un endpoint para enviar mensajes
 
@@ -78,9 +83,9 @@ while (true)
 >*  **node 20.12.1**
 >*  **Angular 19.0.4**
 
-**instalar dependencias**
+**instalar signalr**
 ````bash
-npm install
+npm install @microsoft/signalr --save
 ````
 **Ejecutar aplicación**
 ````bash
